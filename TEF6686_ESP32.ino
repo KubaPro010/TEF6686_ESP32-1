@@ -719,34 +719,42 @@ void setup() {
 
   tft.setSwapBytes(true);
   tft.fillScreen(BackgroundColor);
+  tft.setTextWrap(false, false);
 
   SPIFFS.begin();
 
   FrequencySprite.createSprite(200, 50);
   FrequencySprite.setTextDatum(TR_DATUM);
   FrequencySprite.setSwapBytes(true);
+  FrequencySprite.setTextWrap(false, false);
 
   RDSSprite.createSprite(165, 19);
   RDSSprite.setTextDatum(TL_DATUM);
+  RDSSprite.setTextWrap(false, false);
 
   PSSprite.createSprite(150, 32);
   PSSprite.setTextDatum(TL_DATUM);
   PSSprite.setSwapBytes(true);
+  PSSprite.setTextWrap(false, false);
 
   SquelchSprite.createSprite(27, 19);
   SquelchSprite.setTextDatum(TL_DATUM);
   SquelchSprite.setSwapBytes(true);
+  SquelchSprite.setTextWrap(false, false);
 
   FullLineSprite.createSprite(308, 19);
   FullLineSprite.setSwapBytes(true);
+  FullLineSprite.setTextWrap(false, false);
 
   OneBigLineSprite.createSprite(270, 30);
   OneBigLineSprite.setSwapBytes(true);
+  OneBigLineSprite.setTextWrap(false, false);
 
   SignalSprite.createSprite(80, 48);
   SignalSprite.setTextColor(PrimaryColor, PrimaryColorSmooth, false);
   SignalSprite.setTextDatum(TR_DATUM);
   SignalSprite.setSwapBytes(true);
+  SignalSprite.setTextWrap(false, false);
 
   UpdateFonts(0);
 
@@ -5633,4 +5641,5 @@ const char* textUI(uint16_t number) {
     return (const char*)pgm_read_ptr(&(myLanguage[language][number]));
   }
 }
+
 
